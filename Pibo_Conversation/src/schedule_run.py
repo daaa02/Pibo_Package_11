@@ -120,7 +120,7 @@ class RunSchedule():
             self.act = f'Pibo_Conversation/src/goodbye.py'           
         
         folder = "/home/pi/UserData"
-        today = datetime.now().strftime('%y%m%d_%H%M')
+        today = datetime.now().strftime('%m%d_%H%M')
         # f = open(f'{folder}/{today}.txt','w')        
         # out = subprocess.check_output([f'python3 /home/pi/Pibo_Package_11/Pibo_Conversation/src/greeting.py'], shell=True, stderr=subprocess.STDOUT, encoding="utf-8")  
         
