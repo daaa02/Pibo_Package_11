@@ -57,7 +57,7 @@ class RunSchedule():
             #        6:'Pibo_Play/src/Com/com_4.py', 7:'Pibo_Conversation/src/Solution/01_badword.py'}            
             fix = {0:'Pibo_Conversation/src/Fairytale/19_shepherd.py', 1:'Pibo_Conversation/src/Roleplay/02_strong.py',
                    2:'Pibo_Conversation/src/Solution/01_badword.py', 3:'Pibo_Play/src/Com/com_4.py', 4:'Pibo_Play/src/Soc/soc_6.py',
-                   5:'Pibo_Play/src/Cog/cog_1.py', 6:'Pibo_Play/src/Mus/mus_11.py', 7:'Pibo_Conversation/src/Etiquette/03_cough.py'}   
+                   5:'Pibo_Play/src/Cog/cog_1.py', 6:'Pibo_Play/src/Mus/mus_11.py', 7:'Pibo_Conversation/src/Fariytale/18_rabbit.py'}   
             self.act = fix.get(self.completion)
         
         # 선호도 계산해서 활동 스케줄 결정(4일차~)
