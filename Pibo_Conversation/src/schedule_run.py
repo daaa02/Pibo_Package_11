@@ -72,8 +72,8 @@ class RunSchedule():
             print("선호도 총합:", data3)   
             
             result = us.update(new_preference=data3)[0]
-            
-            
+
+
             if result == '사회성':            
                 # 완료한 활동 개수가 짝수면 놀이, 홀수면 대화
                 if self.completion % 2 == 0: 
@@ -81,8 +81,8 @@ class RunSchedule():
                     self.act = f'Pibo_Play/src/Soc/soc_{rand}.py'
                 
                 if self.completion % 2 != 0:
-                    rand = random.choice(['06_street', '14_giveaway'])
-                    self.act = f'Pibo_Conversation/src/Etiquette/{rand}.py'
+                    rand = random.choice(['02_salt', '18_rabbit'])
+                    self.act = f'Pibo_Conversation/src/Fairytale/{rand}.py'
                     # self.act = f'Pibo_Conversation/src/Etiquette/00_qrcode.py'
                 
             if result == '의사소통':
@@ -116,11 +116,11 @@ class RunSchedule():
                     self.act = f'Pibo_Conversation/src/Roleplay/{rand}.py'
         
         # if self.completion == 9:
-            self.act = f'Pibo_Conversation/src/Etiquette/03_cough.py'  
+            #self.act = f'Pibo_Conversation/src/Etiquette/03_cough.py'  
         
         # 마지막 활동은 헤어짐 시나리오: 얘 끝나고 밑에 다음에 ~ 안나오게 해야함
-        if self.completion == 10:
-            self.act = f'Pibo_Conversation/src/goodbye.py'           
+        #if self.completion == 10:
+            #self.act = f'Pibo_Conversation/src/goodbye.py'           
         
         folder = "/home/pi/UserData"
         today = datetime.now().strftime('%m%d_%H%M')
