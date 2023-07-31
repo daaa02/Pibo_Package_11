@@ -61,7 +61,7 @@ class RunSchedule():
             self.act = fix.get(self.completion)
         
         # 선호도 계산해서 활동 스케줄 결정(4일차~)
-        if 8 <= self.completion < 10:
+        if 8 <= self.completion :
             for i in range(0, len(data2)):              # 점수 값이 string 형태로 들어있어서 flaot로 변환
                 for j in range(0, 4):
                     data2[i][j] = float(data2[i][j])
