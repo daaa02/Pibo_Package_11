@@ -132,13 +132,13 @@ class RunSchedule():
             # subprocess.run([f'python3 {self.path}/{self.act}'], shell=True)
             os.system(f'python3 {self.path}/{self.act}')
             
-            if self.completion >= 10:
-                pass
+            #if self.completion >= 10:
+                #pass
             
-            else:
-                text_to_speech(text="파이보랑 또 놀자!")            
-                motion.set_motion("m_wakeup", 1)
-                subprocess.run(['python3 /home/pi/Pibo_Package_11/Pibo_Conversation/src/start_touch.py'], shell=True)
+            #else:
+                #text_to_speech(text="파이보랑 또 놀자!")            
+                #motion.set_motion("m_wakeup", 1)
+                #subprocess.run(['python3 /home/pi/Pibo_Package_11/Pibo_Conversation/src/start_touch.py'], shell=True)
             
             
             # # 완료한 활동 개수가 짝수면 종료, 홀수면 계속
