@@ -50,23 +50,24 @@ class Etiquette():
         self.score = []
         self.turns = []
         self.reject = []
+        self.today = datetime.now().strftime('%m%d_%H%M')
                 
         
     def Street(self):
         
         cm.tts(bhv="do_suggestion_L", string=f"3번 카드를 파이보에게 보여줘!")
         
-        # while True:         
-        #     time.sleep(2)
-        #     img = pibo_camera.read()
-        #     qr = pibo_detect.detect_qr(img)
-        #     self.card_msg = qr['data']
+        while True:         
+            time.sleep(2)
+            img = pibo_camera.read()
+            qr = pibo_detect.detect_qr(img)
+            self.card_msg = qr['data']
             
-        #     if self.card_msg == "길을 걸으면서 뛰거나 장난치지 않아요":
-        #         break
-        #     else:
-        #         cm.tts(bhv="do_suggestion_L", string=f"3번 카드를 다시 보여줄래?")
-        #         continue
+            if self.card_msg == "길을 걸으면서 뛰거나 장난치지 않아요":
+                break
+            else:
+                cm.tts(bhv="do_suggestion_L", string=f"3번 카드를 다시 보여줄래?")
+                continue
         
         # 2.1 카드 대화
         time.sleep(2)
@@ -174,7 +175,7 @@ class Etiquette():
             cm.tts(bhv="do_joy_A", string=f"{wm.word(self.user_name, 0)}랑 노는 건 정말 재미있어.")
             self.score = [0.0, -0.25, 0.0, 0.0]
         
-        cwp.writerow([today, filename, self.score[0], self.score[1], self.score[2],self.score[3]])
+        cwp.writerow([self.today, filename, self.score[0], self.score[1], self.score[2],self.score[3]])
 
         # 종료 인사
         pibo = cm.tts(bhv="do_joy_A", string=f"나랑 놀아줘서 고마워~")
@@ -192,7 +193,7 @@ class Etiquette():
         cwc.writerow(['%Misrecognitions', ])
 
         # 5. 활동 완료 기록
-        gss.write_sheet(name=self.user_name, today=today, activities=filename)
+        gss.write_sheet(name=self.user_name, today=f'(4)_{self.today}', activities=filename)
 
 
 

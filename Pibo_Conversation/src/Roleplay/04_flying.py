@@ -169,7 +169,7 @@ class Roleplay():
         cwc.writerow(['%Misrecognitions', ])
 
         # 5. 활동 완료 기록
-        gss.write_sheet(name=self.user_name, today=today, activities=filename)
+        gss.write_sheet(name=self.user_name, today=f'(4)_{today}', activities=filename)
 
 
 
