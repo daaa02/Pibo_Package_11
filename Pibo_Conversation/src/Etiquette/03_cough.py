@@ -16,12 +16,8 @@ from data.c_conversation_manage import ConversationManage, WordManage, NLP
 from data.speech_to_text import speech_to_text
 from data.text_to_speech import TextToSpeech, text_to_speech
 from data.spread import google_spread_sheet
-from openpibo.vision import Camera
-from openpibo.vision import Detect
 
 
-pibo_camera = Camera()
-pibo_detect = Detect()
 
 cm = ConversationManage()
 wm = WordManage()
@@ -55,7 +51,7 @@ class Etiquette():
         
     def Cough(self):
         cm.tts(bhv="do_suggestion_L", string=f"2번 카드를 파이보에게 보여줘!")
-        
+        '''
         while True:         
             time.sleep(2)
             img = pibo_camera.read()
@@ -67,11 +63,11 @@ class Etiquette():
             else:
                 cm.tts(bhv="do_suggestion_L", string=f"2번 카드를 다시 보여줄래?")
                 continue
-        
+        '''
         # 2.1 카드 대화
-        time.sleep(2)
+        time.sleep(5)
             
-        pibo = cm.tts(bhv="do_question_L", string="이 카드의 어린이는 무엇을 잘못했을까?")
+        pibo = cm.tts(bhv="do_question_L", string="2번 카드의 어린이는 무엇을 잘못했을까?")
         answer = cm.responses_proc(re_bhv="do_question_L", re_q="이 카드의 어린이는 무엇을 잘못했을까?",
                                    neg_bhv="do_suggestion_S", neg="같이 다시 한번 볼까?",
                                    neu_bhv="do_suggestion_S", neu="같이 다시 한번 볼까?")    
